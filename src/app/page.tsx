@@ -1,30 +1,90 @@
 import Image from 'next/image'
 import styles from './page.module.css'
-import logo from '../media/logo/Logo.svg'
+import Logo from '../media/logo/Logo.svg'
 import Form from '@/components/form'
+import ValidateIcon from '../media/icons/validate.svg'
+import PersonIcon from '../media/icons/personIcon.svg'
+import TechIcon from '../media/icons/techIcon.svg'
+import SuportIcon from '../media/icons/suportIcon.svg'
+import { Oswald, Space_Grotesk } from 'next/font/google'
+import Header from '@/components/header'
+
+const spaceGrotesk = Space_Grotesk({ 
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  variable: '--font-family-main'
+})
+  
+const oswald = Oswald({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  variable: '--font-family-secondary'
+})
 
 export default function Home() {
   return (
     <>
-    <div className={styles.utilityMenu}>
-      <p className={styles.utilityText}>BEM VINDO AO NOSSO  SITE - APROVEITE DESCONTOS DE <span className={styles.utilityTextAttetion}>30%</span> EM TODO OS SERVIÇOS</p>
-    </div>
-    <header className={styles.header}>
-      <div className={styles.imageContainer}>
+    <Header/>
+    <main className={styles.main}>
+      <div className={styles.containerPrymary}>
+        <div className={styles.validateParagraph}>
         <Image
-          src={logo}
-          alt='Logo'
-          fill
-          sizes='(max-width: 66px) 100vw, 60px'
+          src={ValidateIcon}
+          alt='validate'
+          width={24}
+          height={24}
+          sizes='(max-width: 24px) 100vw, 20px'
           priority
         />
+          <p>Metodo válidado, sites otimizados para alta conversão</p>
+        </div>
+        <p className={styles.title}>Especialistas prontos para construir seu site a um preço justo!</p>
+        <span className={styles.subTitle}>Vamos configurar tudo que for necessário para que você rastreie seu público alvo e tenha controle sobre seus anúncios.</span>
+        <button className={styles.contactButton} style={spaceGrotesk.style}>CONTATO</button>
       </div>
-      <nav className={styles.navBar}>
-        <a href="">Inicio</a>
-        <a href="">Contato</a>
-      </nav>
-    </header>
-    <main className={styles.main}>
+      <div className={styles.containerSecondary}>
+        <p className={styles.subTitle2}>O que você receberá com nossos serviços?</p>
+        <div className={styles.insider}>
+          <div className={styles.insiderContainer}>
+            <Image
+            src={TechIcon}
+            alt='Tecnologia'
+            width={24}
+            height={24}
+            sizes='(max-width: 24px) 100vw, 20px'
+            priority
+            />
+            <p className={styles.insiderContainerTitle}>Tecnologia</p>
+            <span className={styles.insiderSpan}>Site construído com as tecnologias mais atuais do mercado, segurança, velocidade e alta conversão.</span>
+          </div>
+          <div className={styles.separator}></div>
+          <div className={styles.insiderContainer}>
+            <Image
+            src={SuportIcon}
+            alt='Suporte'
+            width={24}
+            height={24}
+            sizes='(max-width: 24px) 100vw, 20px'
+            priority
+            />
+            <p className={styles.insiderContainerTitle}>Suporte Dedicado</p>
+            <span className={styles.insiderSpan}>Você terá acesso a todo nosso time. Vamos te auxiliar no que for preciso para que você alcance seus objetivos financeiros no mercado digital.</span>
+          </div>
+          <div className={styles.separator}></div>
+          <div className={styles.insiderContainer}>
+            <Image
+            src={PersonIcon}
+            alt='Personalidade'
+            width={24}
+            height={24}
+            sizes='(max-width: 24px) 100vw, 20px'
+            priority
+            />
+            <p className={styles.insiderContainerTitle}>Personalidade</p>
+            <span className={styles.insiderSpan}>Sem páginas prontas, tudo construído do zero para que você tenha uma página única no mercado.</span>
+          </div>
+        </div>
+      </div>
       <Form/>
     </main>
     </>
