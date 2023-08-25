@@ -1,6 +1,5 @@
 import './globals.css'
 import { Space_Grotesk, Oswald } from 'next/font/google'
-
 const spaceGrotesk = Space_Grotesk({ 
   weight: ['300', '400', '500', '700'],
   subsets: ['latin'],

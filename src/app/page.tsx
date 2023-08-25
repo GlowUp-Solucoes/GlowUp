@@ -8,6 +8,7 @@ import TechIcon from '../media/icons/techIcon.svg'
 import SuportIcon from '../media/icons/suportIcon.svg'
 import { Oswald, Space_Grotesk } from 'next/font/google'
 import Header from '@/components/header'
+import Footer from '@/components/footer'
 
 const spaceGrotesk = Space_Grotesk({ 
   weight: ['300', '400', '500', '700'],
@@ -36,11 +37,12 @@ export default function Home() {
           sizes='(max-width: 24px) 100vw, 20px'
           priority
         />
-          <p>Metodo válidado, sites otimizados para alta conversão</p>
+          <p>Metodo válidado</p>
         </div>
-        <p className={styles.title}>Somos um time especializado em ferramentas profissionais para construção de sites para o mercado digital</p>
-        <span className={styles.subTitle}>Controle seus anúncios e rastreie seu público de maneira profissional</span>
-        <button className={styles.contactButton} style={spaceGrotesk.style}>CONTATO</button>
+        <p className={styles.title}>Sites otimizados para alta conversão</p>
+        <span className={styles.subTitle}>Somos um time especializado em ferramentas profissionais para construção de sites para o mercado digital.</span>
+        <span className={styles.subTitle}>Controle seus anúncios e rastreie seu público de maneira profissional.</span>
+        <a href="#formId" className={styles.contactButton} style={spaceGrotesk.style}>CONTATO</a>
       </div>
       <div className={styles.containerSecondary}>
         <p className={styles.subTitle2}>O que você receberá com nossos serviços?</p>
@@ -87,6 +89,7 @@ export default function Home() {
       </div>
       <Form/>
     </main>
+    <Footer/>
     </>
   )
 }
