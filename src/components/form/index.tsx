@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form'
 import { send } from 'emailjs-com';
-
+import { toast } from "react-toastify";
 
 export interface iFormData {
   name: string;
@@ -49,8 +49,20 @@ const sendEmail = async (data: iFormData) => {
           'cqiqoRUGWo5R_1iPD' // Substitua pelo seu User ID do EmailJS
       );
 
+      toast.success("Informações enviadas com sucesso!", {
+        position: "top-right",
+        autoClose: 2000,
+        theme: "dark",
+      });
+
       console.log('Email sent successfully:', response);
+      window.location.reload();
   } catch (error) {
+    toast.error("Problemas no envio das informações, atualize a pagina e tente novamente.", {
+      position: "top-right",
+      autoClose: 2000,
+      theme: "dark",
+    });
       console.error('Error sending email:', error);
   }
  

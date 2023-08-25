@@ -5,6 +5,9 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-family-main'
 })
+
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
   
 
 export const metadata = {
@@ -19,7 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="PT-BR">
-      <body className={spaceGrotesk.className}>{children}</body>
+      <body className={spaceGrotesk.className}>
+        {children}
+        <ToastContainer />
+        </body>
     </html>
   )
 }
