@@ -39,7 +39,7 @@ export default function Home() {
           <p>Metodo válidado, sites otimizados para alta conversão</p>
         </div>
         <p className={styles.title}>Especialistas prontos para construir seu site a um preço justo!</p>
-        <span className={styles.subTitle}>Vamos configurar tudo que for necessário para que você rastreie seu público alvo e tenha controle sobre seus anúncios.</span>
+        <span className={styles.subTitle}>Controle seus anuncios e seu público de maneira profissional</span>
         <button className={styles.contactButton} style={spaceGrotesk.style}>CONTATO</button>
       </div>
       <div className={styles.containerSecondary}>

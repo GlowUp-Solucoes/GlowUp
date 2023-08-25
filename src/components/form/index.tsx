@@ -49,37 +49,37 @@ export default function Form() {
   });
 
     return (
-      <form className={styles.form}>
-        <label htmlFor="name">Nome</label>
-        <input
-          type="name"
-          id="name"
-          placeholder="Digite aqui seu nome"
-          {...register("name")}
-        />
-        <p>{errors.name?.message}</p>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Digite aqui seu email"
-          {...register("email")}
-        />
-        <p>{errors.email?.message}</p>
-        <label htmlFor="email">Telefone</label>
-        <input
-          type="phone"
-          id="phone"
-          placeholder="Digite aqui seu número"
-          {...register("phone")}
-        />
-        <p>{errors.phone?.message}</p>
-
-        <div>
-          <button onClick={handleSubmit(sendWpp)}>Wpp</button>
-          <button onClick={handleSubmit(sendEmail)}>Email</button>
-        </div>
-      </form>   
-
+      <div className={styles.div}>
+        <form className={styles.form}>
+          <input
+            type="name"
+            id="name"
+            className={styles.input}
+            placeholder='Nome'
+            {...register("name")}
+          />
+          <p>{errors.name?.message}</p> 
+          <input
+            type="email"
+            id="email"
+            className={styles.input}
+            placeholder='E-mail'
+            {...register("email")}
+          />
+          <p>{errors.email?.message}</p>
+          <input
+            type="phone"
+            id="phone"
+            className={styles.input}
+            placeholder='Telefone'
+            {...register("phone")}
+          />
+          <p>{errors.phone?.message}</p>
+          <div className={styles.divButtons}>
+            <button className={styles.button} onClick={handleSubmit(sendWpp)}>WhatsApp</button>
+            <button className={styles.button} onClick={handleSubmit(sendEmail)}>Email</button>
+          </div>
+        </form>   
+      </div>
     )
 }

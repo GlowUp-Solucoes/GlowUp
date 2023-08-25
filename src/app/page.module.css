@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
   min-height: 100vh;
   background-color: var(--background-color);
 }
@@ -13,10 +12,11 @@
   flex-direction: column;
   width: 100%;
   max-width: 68em;
-  height: 23em;
+  height: 33em;
   align-items: center;
   justify-content: flex-start;
   gap: 3em;
+  padding: 6rem;
 }
 
 .validateParagraph{
@@ -50,25 +50,41 @@
 .contactButton{
   width: 12.5em;
   min-height: 3em;
-  background-color: var(--secondary-background-color);
+  background: #e3fc02;
+  animation: animate 3s linear infinite;
   border: solid 0.2em;
   color: var(--black-text-color);
   transition: 0.5s;
   font-size: clamp(0.7em, 1em + 1vw, 1em);
   font-Weight: 600;
 }
+@keyframes animate{
+    0%{
+        background-position-x: 0;
+    }
+    50%{
+        background-position-x: 200px;
+        background: #8cc322;
+    }
+    100%{
+      background-position-x: 0;
+      background: #e3fc02;
+    }
+}
 
 .contactButton:hover{
-  background-color: var(--background-color);
+  background: var(--background-color);
   color: var(--secondary-background-color);
+  animation: none;
 }
+
 
 .containerSecondary{
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 68em;
-  height: 20em;
+  height: 30em;
   align-items: center;
   justify-content: flex-start;
   gap: 3em;
