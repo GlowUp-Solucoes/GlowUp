@@ -1,9 +1,10 @@
-"use client"
+'use client'
 
 import styles from './index.module.css'
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form"
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm } from 'react-hook-form'
+import { send } from 'emailjs-com';
 
 
 export interface iFormData {
@@ -13,14 +14,14 @@ export interface iFormData {
 }
 
 const schema = yup.object({
-  name: yup.string().required("Nome é obrigatório!"),
-  email: yup.string().email().required("Email é obrigatório!"),
-  phone: yup.number().required("Número é obrigatório!"),
+  name: yup.string().required('Nome é obrigatório!'),
+  email: yup.string().email().required('Email é obrigatório!'),
+  phone: yup.number().required('Número é obrigatório!'),
 });
 
 
 
-const sendWpp = (data: iFormData) => {
+const sendData = (data: iFormData) => {
   const number = 3391531299
   const text = `Nome: ${data.name} \nEmail: ${data.email}`
 
@@ -28,13 +29,31 @@ const sendWpp = (data: iFormData) => {
   const wppLink = `https://wa.me/55${number}?text=${encodedMessage}`
   
   window.open(wppLink, '_blank'); 
+
+  sendEmail(data)
 }
 
-const sendEmail = (data: iFormData) => {
+const sendEmail = async (data: iFormData) => {
 
+  const templateParams = {
+    to_email: 'glowupsolucoes.dev@gmail.com',
+    subject: `${data.name}`,
+    message: `Nome: ${data.name} \nEmail: ${data.email} \nTelefone: ${data.phone}`,
+  };
 
+  try {
+      const response = await send(
+          'gmailMessage', 
+          'template_0ztdwod', 
+          templateParams,
+          'cqiqoRUGWo5R_1iPD' // Substitua pelo seu User ID do EmailJS
+      );
 
-  console.log("email")
+      console.log('Email sent successfully:', response);
+  } catch (error) {
+      console.error('Error sending email:', error);
+  }
+ 
 }
 
 export default function Form() {
@@ -52,32 +71,31 @@ export default function Form() {
       <div className={styles.div} id='formId'>
         <form className={styles.form}>
           <input
-            type="name"
-            id="name"
+            type='name'
+            id='name'
             className={styles.input}
             placeholder='Nome'
-            {...register("name")}
+            {...register('name')}
           />
           <p>{errors.name?.message}</p> 
           <input
-            type="email"
-            id="email"
+            type='email'
+            id='email'
             className={styles.input}
             placeholder='E-mail'
-            {...register("email")}
+            {...register('email')}
           />
           <p>{errors.email?.message}</p>
           <input
-            type="phone"
-            id="phone"
+            type='phone'
+            id='phone'
             className={styles.input}
             placeholder='Telefone'
-            {...register("phone")}
+            {...register('phone')}
           />
           <p>{errors.phone?.message}</p>
           <div className={styles.divButtons}>
-            <button className={styles.button} onClick={handleSubmit(sendWpp)}>WhatsApp</button>
-            <button className={styles.button} onClick={handleSubmit(sendEmail)}>Email</button>
+            <button className={styles.button} onClick={handleSubmit(sendData)}>Enviar</button>
           </div>
         </form>   
       </div>
