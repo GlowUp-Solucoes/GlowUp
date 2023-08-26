@@ -45,3 +45,17 @@
     max-width: 8em;
     justify-content: space-between;
   }
+
+  @media (max-width: 600px){
+    .utilityMenu{
+      padding: 0em 2em;
+    }
+    .utilityText{
+      width: 100%;
+      font-size: 0.8em;
+      
+    }
+    .header{
+      padding: 0em 2em;
+    }
+  }

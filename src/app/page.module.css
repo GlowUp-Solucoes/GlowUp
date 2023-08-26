@@ -36,7 +36,7 @@
 .title{
   width: 100%;
   max-width: 67.5em;
-  font-size: clamp(1em, 1em + 1vw, 3.25em) ;
+  font-size: clamp(1em, 1.5em + 1vw, 3.5em) ;
   text-align: center;
   color: #e3fc02;
 }
@@ -44,7 +44,7 @@
 .subTitle{
   width: 100%;
   max-width: 40em;
-  font-size: clamp(0.5em, 0.9em + 1vw, 1em) ;
+  font-size: clamp(0.5em, 0.9em + 1vw, 1.2em) ;
   text-align: center;
 }
 
@@ -93,6 +93,7 @@
   align-items: center;
   justify-content: flex-start;
   gap: 3em;
+  padding: 2em;
 }
 
 .subTitle2{
@@ -139,4 +140,10 @@
 
 .insiderSpan{
   font-size: clamp(0.5em, 1em + 1vw, 1em) ;
+}
+
+@media (max-width: 600px){
+  .containerPrymary{
+    padding: 2rem;
+  }
 }
