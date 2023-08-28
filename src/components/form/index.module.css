@@ -1,0 +1,109 @@
+.div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100vw;
+    height: 30em;
+    background-color: var(--secondary-background-color);
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 36em;
+    background-color: var(--secondary-background-color);
+    gap: 1em;
+    align-items: flex-start;
+}
+
+.divName{
+    width: 100%;
+    max-width: 38em;
+    height: 4em;
+}
+
+.input{
+    width: 100%;
+    max-width: 38em;
+    height: 4em;
+    padding: 0em 2em;
+    background-color: var(--secondary-background-color);
+    border: solid 0.15em;
+    border-color: var(--background-color);
+    color: var(--black-text-color);
+    font-size: 1em;
+    font-weight: 600;
+}
+.input:focus{
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    color: var(--black-text-color);
+}
+
+.input::placeholder{
+    color: var(--black-text-color);
+    font-weight: 500;
+    transition: color 0.5s ease-in-out;
+}
+
+.input:focus::placeholder{
+    color: transparent;
+}
+
+.divButtons{
+    display: flex;
+    width: 100%;
+    gap: 4em;
+    align-items: center;
+    justify-content: center;
+}
+.button{
+
+    width: 12.5em;
+    min-height: 3em;
+    background-color: var(--secondary-background-color);
+    border: solid 0.2em;
+    color: var(--black-text-color);
+    transition: 0.5s;
+    font-size: clamp(0.7em, 1em + 1vw, 1em);
+}
+
+.button:hover{
+    background-color: var(--background-color);
+    color: var(--secondary-background-color);
+
+}
+
+@media (max-width: 600px) {
+    .form {
+        align-items: center;
+    }
+    
+    .divName{
+        max-width: 20em;
+    }
+    
+    .input{
+        max-width: 20em;
+    }
+    
+}
+
+@media (max-width: 375px) {
+    .form {
+        align-items: center;
+        padding: 0em 1em;
+    }
+    
+    .divName{
+        max-width: 18em;
+    }
+    
+    .input{
+        max-width: 18em;
+    }
+    
+}
