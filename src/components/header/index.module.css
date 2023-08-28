@@ -59,3 +59,17 @@
       padding: 0em 2em;
     }
   }
+
+  @media (max-width: 375px){
+    .utilityMenu{
+      padding: 0em 1em;
+    }
+    .utilityText{
+      width: 100%;
+      font-size: 0.6em;
+      
+    }
+    .header{
+      padding: 0em 2em;
+    }
+  }

@@ -76,3 +76,34 @@
     color: var(--secondary-background-color);
 
 }
+
+@media (max-width: 600px) {
+    .form {
+        align-items: center;
+    }
+    
+    .divName{
+        max-width: 20em;
+    }
+    
+    .input{
+        max-width: 20em;
+    }
+    
+}
+
+@media (max-width: 375px) {
+    .form {
+        align-items: center;
+        padding: 0em 1em;
+    }
+    
+    .divName{
+        max-width: 18em;
+    }
+    
+    .input{
+        max-width: 18em;
+    }
+    
+}

@@ -146,4 +146,22 @@
   .containerPrymary{
     padding: 2rem;
   }
+
+  .containerSecondary{
+    height: 60em;
+  }
+  .separator{
+    max-width: 20em;
+    width: 100%;
+    height: 0.5em;
+    background-color: var(--color-white);
+  }
+  .insider{
+    width: 100%;
+    max-width: 68em;
+    height: 45em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
