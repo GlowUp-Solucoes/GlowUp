@@ -1,3 +1,4 @@
+import Analytics from '@/components/analytics';
 import './globals.css'
 import { Space_Grotesk, Oswald } from 'next/font/google'
 const spaceGrotesk = Space_Grotesk({ 
@@ -21,10 +22,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="PT-BR">
+    <html lang="pt-BR">
       <body className={spaceGrotesk.className}>
         {children}
         <ToastContainer />
+        <Analytics/>
         </body>
     </html>
   )
