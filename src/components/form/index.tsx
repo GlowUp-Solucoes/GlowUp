@@ -20,7 +20,6 @@ const schema = yup.object({
 });
 
 
-
 const sendData = (data: iFormData) => {
   const number = 3391531299
   const text = `Nome: ${data.name} \nEmail: ${data.email}`

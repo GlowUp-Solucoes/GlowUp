@@ -17,8 +17,12 @@
     background-color: var(--secondary-background-color);
     gap: 1em;
     align-items: flex-start;
+    color: #000;
 }
 
+.p {
+    color: #000;
+}
 .divName{
     width: 100%;
     max-width: 38em;
